@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    service-label-key: plantr-angular 
+  name: plantr-angular
+spec:
+  type: LoadBalancer
+  ports:
+  - name: plantr-angular
+    port: 80
+    protocol: TCP
+  selector:
+    deployment-label-key: deployment-label-value#for creating a deployment in kubernetes
+ kubectl apply -f spa-deployment.yaml
+ #for internal communicating to angualar application
+ kubeclt apply -f SPA-service.yaml
+ #for access the angular application outside kubernetes
+ kubeclt apply -f Plantr-frontend-loadBalancerService.yaml
