@@ -11,7 +11,8 @@ spec:
     port: 80
     protocol: TCP
   selector:
-    deployment-label-key: deployment-label-value#for creating a deployment in kubernetes
+    deployment-label-key: plantr-angular
+ #for creating a deployment in kubernetes
  kubectl apply -f spa-deployment.yaml
  #for internal communicating to angualar application
  kubeclt apply -f SPA-service.yaml
