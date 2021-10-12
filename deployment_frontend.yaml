@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod-test-group
+spec:
+  containers:
+    - name: nginx
+      image: ghcr.io/unlegendnl/plantrfrontendcomponent:main
+      ports:
+        - name: http
+          containerPort: 80
+          protocol: TCP
