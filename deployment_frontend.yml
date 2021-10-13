@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: my-pod-test-group
+  name: my-pod-frontend-plantr
 spec:
   containers:
     - name: nginx
