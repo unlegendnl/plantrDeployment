@@ -5,7 +5,7 @@ metadata:
 spec:
   containers:
     - name: nginx
-      image: ghcr.io/unlegendnl/plantrfrontendcomponent:main
+      image: unlegendnl/canvasairlinefrontend:tagname
       ports:
         - name: http
           containerPort: 80
