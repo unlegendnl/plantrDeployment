@@ -5,7 +5,7 @@ metadata:
 spec:
   containers:
     - name: nginx
-      image: unlegendnl/canvasairlinefrontend:tagname
+      image: unlegendnl/canvasairlinefrontend:latest
       ports:
         - name: http
           containerPort: 80
