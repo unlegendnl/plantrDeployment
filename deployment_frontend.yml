@@ -14,9 +14,10 @@ spec:
       labels:
         app: plantr-fe
     spec:
+      imagePullPolicy: Always
       containers:
       - name: plantr-fe
         image: ghcr.io/unlegendnl/plantrfrontendcomponent:main
-        imagePullPolicy: Always
+        
         ports:
         - containerPort: 80
