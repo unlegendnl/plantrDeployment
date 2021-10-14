@@ -1,12 +1,21 @@
-apiVersion: v1
-kind: Pod
+apiVersion: apps/v1
+kind: Deployment
 metadata:
-  name: my-pod-frontend-plantr
+  name: plantr-fe-deployment
+  labels:
+    app: plantr-fe
 spec:
-  containers:
-    - name: nginx
-      image: ghcr.io/unlegendnl/plantrfrontendcomponent:main
-      ports:
-        - name: http
-          containerPort: 80
-          protocol: TCP
+  replicas: 1
+  selector:
+    matchLabels:
+      app: plantr-fe
+  template:
+    metadata:
+      labels:
+        app: plantr-fe
+    spec:
+      containers:
+      - name: plantr-fe
+        image: ghcr.io/unlegendnl/plantrfrontendcomponent:main
+        ports:
+        - containerPort: 80
