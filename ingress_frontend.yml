@@ -8,10 +8,10 @@ spec:
   rules:
   - http:
       paths:
-      - path: /plantr
+      - path: /
         pathType: Prefix
         backend:
           service:
-            name: plantr-fe
+            name: plantr-service
             port:
               number: 80
