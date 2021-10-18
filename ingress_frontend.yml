@@ -9,7 +9,9 @@ spec:
   - host: plantr.miguelwebservices.nl
     http:
       paths:
-       - backend:
+      - path: /
+        pathType: Prefix
+        backend:
           service:
             name: plantr-service
             port:
