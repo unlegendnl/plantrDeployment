@@ -9,4 +9,4 @@ spec:
     targetPort: 1433
   selector:
     name: sqlserver
-  type: LoadBalancer 
+  #type: LoadBalancer 
