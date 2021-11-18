@@ -27,7 +27,7 @@ spec:
   type: NodePort
   ports:
   - port: 1433 
-    targetPort: 80
+    targetPort: 1433
     nodePort: 31433
   selector:
     run: mydb
