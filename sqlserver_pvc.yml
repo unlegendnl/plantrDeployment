@@ -13,25 +13,22 @@ spec:
         name: sqlserver
     spec:
       containers:
-      - name: sqlserver1
+      - name: sqlserver
         image: mcr.microsoft.com/mssql/server:2019-CU4-ubuntu-16.04
         ports:
         - containerPort: 1433
         env:
-        - name: SA_PASSWORD
-          value: "Testing1122"
         - name: ACCEPT_EULA
           value: "Y"
----
-apiVersion: v1
-  kind: Service
-metadata:
-  name: sqlserver-service
-spec:
-  ports:
-  - name: sqlserver
-    port: 1433
-    targetPort: 1433
-  selector:
-    name: sqlserver
-  type: LoadBalancer
+        - name: SA_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mssql
+              key: SA_PASSWORD 
+        volumeMounts:
+        - name: mssqldb
+          mountPath: /var/opt/mssql
+      volumes:
+      - name: mssqldb
+        persistentVolumeClaim:
+          claimName: mssql-data
