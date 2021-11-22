@@ -26,7 +26,7 @@ spec:
           value: "vV5r9tn0M4@"
         volumeMounts:
         - name: mssqldb
-          mountPath: /var/opt/mssql/data
+          mountPath: /var/opt/mssql
       volumes:
       - name: mssqldb
         persistentVolumeClaim:
