@@ -11,7 +11,7 @@ spec:
   accessModes:
     - ReadWriteOnce
   hostPath:
-    path: "~/persistentVolume"
+    path: "/home/homeserver/persistentVolume"
 
 #---
 #apiVersion: v1
