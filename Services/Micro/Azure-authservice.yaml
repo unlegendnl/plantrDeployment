@@ -43,8 +43,8 @@ spec:
           image: ghcr.io/unlegendnl/plantrbackendcomponent:main
           imagePullPolicy: Always
           envFrom:
-            - secretRef:
-                name: auth-secret
+          #  - secretRef:
+          #      name: auth-secret
           resources:
             requests:
               cpu: 100m
