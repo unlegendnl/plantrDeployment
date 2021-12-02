@@ -1,0 +1,54 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: plantr-gateway-service
+  namespace: plantr
+  labels:
+    app: plantr-gateway-service
+    service: plantr-gateway-service
+spec:
+  selector:
+    app: plantr-gateway-service-pod
+  ports:
+    - protocol: TCP
+      name: http
+      port: 80
+      targetPort: 80
+  type: LoadBalancer
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: plantr-gateway-service
+  namespace: plantr
+spec:
+  replicas: 1
+  minReadySeconds: 10
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  selector:
+    matchLabels:
+      app: plantr-gateway-service-pod
+      version: latest
+  template:
+    metadata:
+      labels:
+        app: plantr-gateway-service-pod
+        version: latest
+    spec:
+      containers:
+        - name: plantr-gateway-container
+          image: ghcr.io/unlegendnl/plantrgateway:main
+          imagePullPolicy: Always
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 250m
+              memory: 256Mi
+          ports:
+            - containerPort: 80
