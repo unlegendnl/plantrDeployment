@@ -6,10 +6,10 @@ metadata:
   labels:
     app: plantr-auth-service
     service: plantr-auth-service
-#spec: #testing, no internal IP only
-#  selector:
-#    app: plantr-auth-service-pod
-#  ports:
+spec: 
+  selector:
+    app: plantr-auth-service-pod
+#  ports: #testing, no internal IP only
 #    - name: plantr-auth-service
 #      port: 80
 #  type: ClusterIP
