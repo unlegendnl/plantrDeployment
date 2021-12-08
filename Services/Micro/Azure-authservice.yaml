@@ -9,11 +9,7 @@ metadata:
 spec: 
   selector:
     app: plantr-auth-service-pod
-#  ports: #testing, no internal IP only
-#    - name: plantr-auth-service
-#      port: 80
-#  type: ClusterIP
-   ports:
+  ports:
     - protocol: TCP
       name: http
       port: 80
