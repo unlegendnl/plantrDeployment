@@ -6,13 +6,19 @@ metadata:
   labels:
     app: plantr-auth-service
     service: plantr-auth-service
-spec:
-  selector:
-    app: plantr-auth-service-pod
-  ports:
-    - name: plantr-auth-service
+#spec: #testing, no internal IP only
+#  selector:
+#    app: plantr-auth-service-pod
+#  ports:
+#    - name: plantr-auth-service
+#      port: 80
+#  type: ClusterIP
+ ports:
+    - protocol: TCP
+      name: http
       port: 80
-  type: ClusterIP
+      targetPort: 80
+  type: LoadBalancer  
 ---
 
 apiVersion: apps/v1
