@@ -38,12 +38,13 @@ spec:
       volumes:
       - name: mssqldb
         persistentVolumeClaim:
-          claimName: mssql-data
+          claimName: plantr-database-volume-claim
 ---
 apiVersion: v1
 kind: Service
 metadata:
   name: mssql-deployment
+  namespace: plantr
 spec:
   selector:
     app: mssql
