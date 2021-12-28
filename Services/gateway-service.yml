@@ -43,6 +43,9 @@ spec:
         - name: plantr-gateway-container
           image: ghcr.io/unlegendnl/plantrgateway:main
           imagePullPolicy: Always
+          envFrom:
+            - secretRef:
+                name: gateway-auth-config
           resources:
             requests:
               cpu: 100m

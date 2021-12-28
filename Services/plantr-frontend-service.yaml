@@ -57,17 +57,17 @@ spec:
               memory: 256Mi
           ports:
             - containerPort: 80
----
-apiVersion: autoscaling/v1
-kind: HorizontalPodAutoscaler
-metadata:
-  name: plantr-frontend-autoscaler
-  namespace: plantr
-spec:
-  scaleTargetRef:
-    apiVersion: apps/v1
-    kind: Deployment
-    name: plantr-frontend
-  minReplicas: 1
-  maxReplicas: 5
-  targetCPUUtilizationPercentage: 75
+--- 
+# apiVersion: autoscaling/v1
+# kind: HorizontalPodAutoscaler
+# metadata:
+#   name: plantr-frontend-autoscaler
+#   namespace: plantr
+# spec:
+#   scaleTargetRef:
+#     apiVersion: apps/v1
+#     kind: Deployment
+#     name: plantr-frontend
+#   minReplicas: 1
+#   maxReplicas: 5
+#   targetCPUUtilizationPercentage: 75
