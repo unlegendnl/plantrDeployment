@@ -57,16 +57,16 @@ spec:
           ports:
             - containerPort: 80
 ---
-# apiVersion: autoscaling/v1
-# kind: HorizontalPodAutoscaler
-# metadata:
-#   name: plantr-auth-service-autoscaler
-#   namespace: plantr
-# spec:
-#   scaleTargetRef:
-#     apiVersion: apps/v1
-#     kind: Deployment
-#     name: plantr-auth-service
-#   minReplicas: 1
-#   maxReplicas: 5
-#   targetCPUUtilizationPercentage: 75
+ apiVersion: autoscaling/v1
+ kind: HorizontalPodAutoscaler
+ metadata:
+   name: plantr-auth-service-autoscaler
+   namespace: plantr
+ spec:
+   scaleTargetRef:
+     apiVersion: apps/v1
+     kind: Deployment
+     name: plantr-auth-service
+   minReplicas: 1
+   maxReplicas: 5
+   targetCPUUtilizationPercentage: 75
