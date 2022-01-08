@@ -20,6 +20,7 @@ metadata:
   labels:
     app: zookeeper
   name: zookeeper
+  namespace: plantr
 spec:
   replicas: 1
   selector:
