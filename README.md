@@ -100,4 +100,6 @@ https://github.com/unlegendnl/plantrGateway
 ##  Microservices: 
 https://github.com/unlegendnl/PlantrBackendComponent 
 https://github.com/unlegendnl/PlantrBackendComponentProfile
+##  Hardware: 
+https://github.com/unlegendnl/PlantrHardwareComponent
 
