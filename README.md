@@ -32,6 +32,7 @@ Kubectl apply -f Services/plantr-frontend-service.yaml
 ##  Secrets
 (!IMPORTANT!) Change the ip's within the yml to the ones assigned from the cluster, see slides (!IMPORTANT!)
 Kubectl apply -f Secrets/Secrets.yml
+After this step, delete the pods of the gateway, mssql, authservice and profileservice to apply these overrides
 
 # Testing
 
