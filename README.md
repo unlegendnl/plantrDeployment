@@ -1,7 +1,7 @@
 # plantrDeployment
 
 Slides presentation describing the architechture and how to apply (Dutch): https://docs.google.com/presentation/d/13NRcB_Zepy0HTVz7P_y4kztPtZJSCOFrOVckAs5vyPA/edit?usp=sharing
-
+Architecture document: https://docs.google.com/document/d/1fQocwp75kKGl_7NZ_Xa818kJ4ql2lprKcRWqUFRhGGQ/edit?usp=sharing
 # Apply sequence fresh cluster
 
 ##  Namespaces:
