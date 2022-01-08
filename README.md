@@ -32,3 +32,56 @@ Kubectl apply -f Services/plantr-frontend-service.yaml
 ##  Secrets
 (!IMPORTANT!) Change the ip's within the yml to the ones assigned from the cluster, see slides (!IMPORTANT!)
 Kubectl apply -f Secrets/Secrets.yml
+
+# Testing
+
+## Auth service
+Endpoint: Register
+POST http://{IP of auth service}/api/User
+Model:
+{
+  "userId": 0,
+  "userName": "miguelsoto",
+  "email": "string",
+  "password": "johnnyiscool",
+  "admin": true
+}
+Expected result: 200OK
+
+Endpoint: Login
+POST http://{IP of auth service}/api/Authentication
+Model:
+{
+  "userId": 0,
+  "userName": "miguelsoto",
+  "email": "string",
+  "password": "johnnyiscool",
+  "admin": true
+}
+Expected result: 200OK + JWTtoken in body
+
+## Gateway
+Endpoint: Register
+POST http://{IP of gateway}/register
+Model:
+{
+  "userId": 0,
+  "userName": "miguelsoto",
+  "email": "string",
+  "password": "johnnyiscool",
+  "admin": true
+}
+Expected result: 200OK
+
+Endpoint: Login
+POST http://{IP of gateway}/login
+Model:
+{
+  "userId": 0,
+  "userName": "miguelsoto",
+  "email": "string",
+  "password": "johnnyiscool",
+  "admin": true
+}
+Expected result: 200OK + JWTtoken in body
+
