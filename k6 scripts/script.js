@@ -1,3 +1,5 @@
+//running this script: k6 run --vus 1000 --iterations 10000 script.js 
+
 import http from 'k6/http';
 
 export default function () {
