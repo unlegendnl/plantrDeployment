@@ -90,3 +90,13 @@ Expect new record in DB profile after running register, check with Azure Data St
 
 ##  load testing pod autoscalers
 using k6 CLI > k6Scripts/script.js > k6 run --vus 1000 --iterations 10000 script.js (do not forget to add the correct ip of the auth or gateway service)
+
+# repositories used within the cluster
+##  Frontend:
+https://github.com/unlegendnl/PlantrFrontendComponent 
+##  Gateway:
+https://github.com/unlegendnl/plantrGateway 
+##  Microservices: 
+https://github.com/unlegendnl/PlantrBackendComponent 
+https://github.com/unlegendnl/PlantrBackendComponentProfile
+
