@@ -85,3 +85,8 @@ Model:
 }
 Expected result: 200OK + JWTtoken in body
 
+##Kafka
+Expect new record in DB profile after running register, check with Azure Data Studio
+
+##load testing pod autoscalers
+using k6 CLI > k6Scripts/script.js > k6 run --vus 1000 --iterations 10000 script.js (do not forget to add the correct ip of the auth or gateway service)
