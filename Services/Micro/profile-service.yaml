@@ -24,6 +24,7 @@ metadata:
   namespace: plantr
 spec:
   replicas: 1
+  
   minReadySeconds: 10
   strategy:
     type: RollingUpdate
@@ -40,6 +41,7 @@ spec:
         app: plantr-profile-service-pod
         version: latest
     spec:
+      hostname: plantr-profile-service
       containers:
         - name: plantr-profile-container
           image: unlegendnl/plantrbackendcomponentprofile:latest

@@ -40,6 +40,7 @@ spec:
         app: plantr-auth-service-pod
         version: latest
     spec:
+      hostname: plantr-auth-service
       containers:
         - name: plantr-auth-container
           image: ghcr.io/unlegendnl/plantrbackendcomponent:main
